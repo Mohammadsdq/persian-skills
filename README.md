@@ -4,7 +4,6 @@
 
 > A collection of Agent Skills (SKILL.md + tested stdlib-only scripts) that teach Claude the everyday Persian tasks it tends to get wrong: Jalali dates, ZWNJ/half-space typography, numbers in words, RTL Word/PDF/Excel files, formal letters, exams and lesson plans.
 
-![tests](https://github.com/Mohammadsdq/persian-skills/actions/workflows/ci.yml/badge.svg)
 ![license](https://img.shields.io/badge/license-MIT-blue)
 
 ## مهارت‌ها
@@ -79,7 +78,3 @@ python -m unittest discover -s tests -v
 
 مهارت تازه، قالب نامه، یا خطایی که دیدی؟ [CONTRIBUTING.md](CONTRIBUTING.md) را ببین. Issue و PR خوش‌آمد است.
 
-
-## مجوز
-
-MIT
