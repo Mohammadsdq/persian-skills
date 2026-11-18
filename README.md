@@ -1,9 +1,18 @@
+<div dir="ltr">
+
+[English](README.md) · **فارسی**
+
+</div>
+
+<div dir="rtl">
+
 # مهارت‌های فارسی برای Claude · Persian Skills
 
 مجموعه‌ای از **Agent Skills** برای کسانی که با Claude به فارسی کار می‌کنند: معلم، دانشجو، کارمند، مدرس کامپیوتر. هر مهارت یک پوشه‌ی `SKILL.md` است و جاهایی که دقت لازم است (تاریخ شمسی، عدد به حروف، نیم‌فاصله، ورد راست‌چین) یک **اسکریپت تست‌شده** دارد، یعنی Claude حدس نمی‌زند، محاسبه می‌کند.
 
 > A collection of Agent Skills (SKILL.md + tested stdlib-only scripts) that teach Claude the everyday Persian tasks it tends to get wrong: Jalali dates, ZWNJ/half-space typography, numbers in words, RTL Word/PDF/Excel files, formal letters, exams and lesson plans.
 
+![tests](https://github.com/Mohammadsdq/persian-skills/actions/workflows/ci.yml/badge.svg)
 ![license](https://img.shields.io/badge/license-MIT-blue)
 
 ## مهارت‌ها
@@ -21,6 +30,8 @@
 
 ## نمونه‌ی خروجی واقعی
 
+<div dir="ltr">
+
 ```text
 $ echo "كتاب هاي من ,  مي خواهم  ١٢٣ نفر" | python normalize.py -
 کتاب‌های من، می‌خواهم ۱۲۳ نفر
@@ -33,18 +44,26 @@ $ python jalali.py --fa to-jalali 2026-03-21
 میلادی: 2026-03-21
 ```
 
+</div>
+
 ## نصب
 
 ### Claude Code
 
 macOS / Linux:
 
+<div dir="ltr">
+
 ```bash
 git clone https://github.com/Mohammadsdq/persian-skills.git
 mkdir -p ~/.claude/skills && cp -r persian-skills/skills/* ~/.claude/skills/
 ```
 
+</div>
+
 Windows (PowerShell):
+
+<div dir="ltr">
 
 ```powershell
 git clone https://github.com/Mohammadsdq/persian-skills.git
@@ -52,11 +71,17 @@ New-Item -ItemType Directory -Force "$env:USERPROFILE\.claude\skills" | Out-Null
 Copy-Item -Recurse persian-skills\skills\* "$env:USERPROFILE\.claude\skills\"
 ```
 
+</div>
+
 ### claude.ai (آپلود zip)
+
+<div dir="ltr">
 
 ```bash
 python scripts/package_skills.py     # می‌سازد: dist/<نام-مهارت>.zip
 ```
+
+</div>
 
 سپس در Claude: **Settings ← Capabilities ← Skills** و zip هر مهارت را آپلود کن. (مسیر منو ممکن است با نسخه‌ها تغییر کند.)
 
@@ -69,12 +94,28 @@ python scripts/package_skills.py     # می‌سازد: dist/<نام-مهارت>
 
 ## توسعه
 
+<div dir="ltr">
+
 ```bash
 python scripts/validate_skills.py
 python -m unittest discover -s tests -v
 ```
 
+</div>
+
 ## مشارکت
 
 مهارت تازه، قالب نامه، یا خطایی که دیدی؟ [CONTRIBUTING.md](CONTRIBUTING.md) را ببین. Issue و PR خوش‌آمد است.
 
+## محدودیت‌ها (صادقانه)
+
+- تاریخ شمسی با الگوریتم محاسباتی (جلالی) کار می‌کند؛ برای تاریخ‌های بسیار دور یا تقویم رسمی تعطیلات، به منبع رسمی نگاه کن.
+- نیم‌فاصله‌گذاری قاعده‌محور است و جای ویراستار را نمی‌گیرد.
+- قالب نامه‌ها و سرفصل‌های آزمون راهنما هستند، نه متن رسمی سازمانی.
+- فونت‌ها همراه ریپو نیست؛ Vazirmatn را جدا نصب کن.
+
+## مجوز
+
+MIT
+
+</div>
